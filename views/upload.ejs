@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style/css/upload.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+
+<body>
+    <main>
+
+
+        <div id="uploadSec">
+            <h1>Upload your songs here!</h1>
+            <div id="songInfo" class="authFill">
+                <h6>Enter the Song Information</h6>
+                <form action="/uploadSong" method="post" enctype="multipart/form-data">
+                    <div class="felm">
+                        <label for="songName">
+                            Song name
+                        </label>
+                        <input type="text" placeholder="enter the name of the song" name="songName">
+                    </div>
+                    <div class="felm">
+                        <label for="genre">
+                            Album
+                        </label>
+                        <input type="text" placeholder="enter the name of album" name="album">
+                    </div>
+                    <div class="felm">
+                        <label for="artist">
+                            Artist
+                        </label>
+                        <input type="text" placeholder="enter the name of the artist" name="artist">
+                    </div>
+                    <div class="felm">
+                        <label for="language">
+                            Language
+                        </label>
+                        <select name="language" id="language">
+                            <option value="Hindi">Hindi</option>
+                            <option value="English">English</option>
+                            <option value="Punjabi">Punjabi</option>
+                            <option value="Instrumental">Instrument</option>
+
+                        </select>
+                    </div>
+                    <div class="felm">
+                        <label for="songPic">
+                            Song Poster
+                        </label>
+                        <input type="file" name="pic">
+                        <p>*accepted file format is (.png and .jpg)</p>
+                    </div>
+
+                    <div class="felm">
+                        <label for="songPic">
+                            Song
+                        </label>
+                        <input type="file" name="song">
+                        <p>*accepted file format is (.mp3)</p>
+                    </div>
+
+                    <button type="submit">Submit</button><br>
+
+
+                </form>
+
+            </div>
+
+        </div>
+        <div class="back">
+            <a href="/profile">Home</a><i class="ri-home-smile-line"></i>
+        </div>
+
+
+
+    </main>
+
+
+
+    <script src="/javascripts/upload.js"></script>
+
+</body>
+
+</html>

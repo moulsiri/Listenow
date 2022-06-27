@@ -1,0 +1,147 @@
+@import './util';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    min-height: 100vh;
+    background-image: url("../background/uploadBG.png");
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+
+}
+
+
+#uploadSec {
+    width: 70%;
+    position: absolute;
+    right: 0;
+    height: 100vh;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    // justify-content: space-between;
+
+    h1 {
+        font-family: $primaryFont;
+        font-weight: fontWeight('r');
+        // font-size: fontSize('s');
+        margin-top: .5em;
+        margin-left: 1em;
+        margin-bottom: .5em;
+        // margin: 1em;
+    }
+
+
+}
+
+#songInfo {
+    height: 70vh;
+    width: 50%;
+    // background-color: rgba(255, 255, 0, 0.603);
+    margin-left: 2em;
+
+}
+
+.authFill {
+    width: 100%;
+    height: inherit;
+    // position: absolute;
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    justify-content: space-between;
+    padding-bottom: 4em;
+    // padding-top: 2em;
+
+    h6 {
+        font-size: fontSize('s');
+        font-family: $secondaryFont;
+        font-weight: fontWeight('r');
+        // margin-left: .5em;
+        margin-bottom: 1em;
+    }
+
+    form {
+        background-color: #fff;
+        border: 1px solid map-get($colorAlpha, 'v');
+        width: 90%;
+        padding: 0 2em;
+        // height: fit-content;
+        // padding-bottom: 1em;
+
+        button {
+            margin-top: 1em;
+            padding: .5em 1em;
+            border: none;
+            background-color: colors('b');
+            color: colors('w');
+            letter-spacing: .1em;
+            margin-bottom: 1em;
+
+        }
+    }
+}
+
+.felm {
+    // background-color: yellow;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    margin-top: 1em;
+
+    input {
+        margin-top: .5em;
+        padding: .5em 1em;
+        outline: none;
+
+        &::placeholder {
+            color: colors('b');
+            font-style: italic;
+            letter-spacing: .1em;
+
+        }
+    }
+
+    p {
+        font-style: italic;
+        color: colors('r');
+        font-size: fontSize('xs');
+    }
+}
+
+#upSong {
+    height: 20vh;
+    width: 50%;
+    margin-left: 2em;
+    // background-color: rgba(0, 0, 255, 0.534);
+}
+
+.back {
+    position: absolute;
+    bottom: 5%;
+    display: flex;
+    right: 5%;
+    align-items: center;
+    width: 10%;
+    justify-content: space-between;
+    padding: .5em 1em;
+    background-color: colors('v');
+    border-radius: 2em;
+
+    a {
+        color: colors('w')
+    }
+
+    i {
+        background-color: colors('w');
+        padding: .5em;
+        border-radius: 50%;
+        color: colors('b')
+    }
+}

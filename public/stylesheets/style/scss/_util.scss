@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'gilroy'
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+
+}
+
+a {
+    text-decoration: none !important;
+}
+
+@mixin centerFlex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+@mixin centerAbs {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin transition($elm) {
+    transition: $elm cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
+}
+
+$colors: (
+    "r":#FF6B6C,
+    "y":#FFC145,
+    "v":#5B5F97,
+    "w":#FFFFFB,
+    "b":#1A1B24
+);
+
+@function colors($clr) {
+    @return map-get($colors, $clr)
+}
+
+;
+$colorAlpha: (
+    'r':#ff6b6b75,
+    'v':#1a1b2438,
+);
+
+$fontWeight: (
+    'l':100,
+    'r':300,
+    'a':500,
+    'm':600,
+    'b':900
+);
+
+@function fontWeight($weight) {
+    @return map-get($fontWeight, $weight)
+}
+
+$fontSize: (
+    'xs':.8rem,
+    's':1.2rem,
+    'm':1.5rem,
+    'l':2rem,
+    'xl':3rem,
+    'xxl':5rem
+);
+
+@function fontSize($size) {
+    @return map-get($fontSize, $size)
+}
+
+$primaryFont: 'Daaron';
+$secondaryFont: 'MongoDB Value Serif';
+
+.btn {
+    padding: .3rem .5rem;
+}

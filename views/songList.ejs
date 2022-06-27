@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style/css/songList.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+
+<body>
+    <main>
+
+        <div id="songs">
+            <nav>
+                <div id="nlft">
+                    <div id="logo">
+                        <h3>Liste<span>now.</span></h3>
+
+                    </div>
+                    <div id="nlinks">
+                        <a href="/profile">Home</a><a href="#">Browser</a><a href="#">Premium</a>
+
+                    </div>
+                </div>
+
+                <div id="nicons">
+                    <i class="ri-sun-line"></i>
+                    <i class="ri-earth-fill"></i>
+                    <i class="ri-user-add-fill" id="sb1Btn"></i>
+                </div>
+            </nav>
+            <div id="search">
+                <form action="#">
+                    <input type="search" placeholder="search latest trending songs, album and playlist" name="q">
+                    <!-- <i class="ri-search-line"></i> -->
+
+
+                </form>
+            </div>
+            <div id="sResult">
+
+                <div id="srchTxt">
+                    <h3>Your search result is here</h3>
+                </div>
+                <div id="sList">
+                    <%songs.forEach(function(data){%>
+
+                        <div class="selm">
+                            <div class="sImg">
+                                <div class="sPic">
+                                    <img src="<%=data.sPic%>" alt="">
+                                </div>
+
+                            </div>
+                            <div class="sInfo">
+                                <h4>
+                                    <%=data.name%>
+                                </h4>
+                                <p>
+                                    <%=data.artist%>
+                                </p>
+
+                            </div>
+                            <div class="sicons">
+                                <div class="igrp">
+                                    <div class="igelm">
+                                        <p>
+                                            <%=data.Likes.length%>
+                                        </p><i class="ri-heart-3-line"></i>
+                                    </div>
+                                    <div class="igelm">
+                                        <i class="ri-play-list-add-fill"></i>
+                                    </div>
+
+
+                                </div>
+                                <a href="/playSong/<%=data._id%>"><button>Play Now</button></a>
+
+                            </div>
+
+                        </div>
+
+                        <%})%>
+
+
+                </div>
+
+
+            </div>
+        </div>
+
+
+    </main>
+
+
+
+    <!-- <script src="script/player.js"></script> -->
+
+</body>
+
+</html>
