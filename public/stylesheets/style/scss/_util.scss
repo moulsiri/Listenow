@@ -16,6 +16,12 @@ a {
     text-decoration: none !important;
 }
 
+@mixin mobile($size) {
+    @media (max-width:$size) {
+        @content;
+    }
+}
+
 @mixin centerFlex {
     display: flex;
     justify-content: center;

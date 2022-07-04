@@ -2,7 +2,7 @@
 @import './common';
 
 #songs {
-    width: 60%;
+    width: 60vw;
     height: 100vh;
     margin: 0 auto;
     // padding: 2em 0;
@@ -11,6 +11,16 @@
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
+
+    @include mobile(1000px) {
+        width: 80vw;
+
+    }
+
+    @include mobile(650px) {
+        width: 90vw;
+
+    }
 }
 
 
@@ -18,6 +28,31 @@
 nav {
     padding: 0 1rem;
 
+    #nlinks {
+        a {
+            color: colors('b');
+
+        }
+    }
+
+    #logo {
+        h3 {
+            color: colors('b');
+        }
+    }
+
+    #nicons {
+
+        i {
+            color: colors('b');
+        }
+    }
+
+    #menu {
+        color: colors(b);
+    }
+
+    // background-color: rgba(0, 0, 0, 0.226);
 }
 
 #nlinks {
@@ -70,7 +105,7 @@ nav {
         height: 75vh;
         width: 100%;
         overflow: auto;
-        border: 1px solid map-get($colorAlpha, v)
+        border: 1px solid map-get($colorAlpha, v);
     }
 
 
@@ -84,12 +119,24 @@ nav {
         justify-content: space-between;
         padding: 1em;
 
+        @include mobile(600px) {
+            height: 13vh;
+
+        }
+
         .sImg {
             width: 20%;
             height: 100%;
             // background-color: violet;
             display: flex;
             justify-content: center;
+            font-size: 20px;
+
+            @include mobile(600px) {
+                font-size: 13px;
+
+            }
+
 
             .sPic {
                 width: 4em;
@@ -109,15 +156,21 @@ nav {
             width: 55%;
             height: 100%;
             // background-color: yellow;
+            font-size: 20px;
+
+            @include mobile(600px) {
+                font-size: 12px;
+
+            }
 
             h4 {
                 font-family: $secondaryFont;
                 font-weight: fontWeight(r);
-                font-size: fontSize(m);
+                font-size: 1.5em;
             }
 
             p {
-                font-size: fontSize(xs);
+                font-size: .8em;
                 font-weight: fontWeight(m);
                 margin-top: 1em;
                 letter-spacing: .1em;
@@ -133,6 +186,12 @@ nav {
             align-items: center;
             justify-content: space-around;
             flex-direction: column;
+            font-size: 20px;
+
+            @include mobile(600px) {
+                font-size: 13px;
+
+            }
 
 
             .igrp {
@@ -144,7 +203,7 @@ nav {
                     display: flex;
 
                     p {
-                        font-size: fontSize(xs);
+                        font-size: .8em;
                         margin-right: .2em;
                     }
                 }
@@ -157,8 +216,15 @@ nav {
                     color: colors(w);
                     padding: .5em 1em;
                     letter-spacing: .1em;
+                    font-size: .8em;
                     border-radius: 2em;
                     cursor: pointer;
+
+                    @include mobile(600px) {
+                        font-size: .6em;
+                        padding: .5em;
+
+                    }
                 }
             }
         }

@@ -63,7 +63,7 @@ router.get('/profile', isLoggedIn, async function (req, res) {
   res.render('profile', { userData: u })
 })
 
-router.get('/uploadForm', function (req, res) {
+router.get('/uploadForm', isLoggedIn, function (req, res) {
   res.render('upload');
 })
 
@@ -105,7 +105,7 @@ router.post('/uploadSong', isLoggedIn, multerUploads.fields([{ name: 'pic', maxC
               console.log('song database m aagya');
               uData.songAdded.push(sData._id);
               uData.save().then(function (data) {
-                res.json({ msg: "kam hogya" });
+                res.redirect('/songsYouAdded');
               })
             }).catch(function (e) {
               console.log('song add krne m error')
@@ -137,18 +137,29 @@ router.post('/uploadSong', isLoggedIn, multerUploads.fields([{ name: 'pic', maxC
     res.json({ msg: 'no files' })
   }
 })
+//all songs collection 
 router.get('/songs', async function (req, res) {
   let songList = await songs.find();
   await res.render('songList', { songs: songList });
 
 })
-router.get('/playSong/:id', async function (req, res) {
-  let song = await songs.findOne({
-    _id: req.params.id
-  });
-  await res.render('player', { sdata: song })
-})
+// For user collection 
+router.get('/songsYouLike', isLoggedIn, async function (req, res) {
+  let uData = await user.findOne({
+    username: req.session.passport.user
+  }).populate('likedSongs');
+  await res.render('songList', { songs: uData.likedSongs });
 
+})
+router.get('/songsYouAdded', isLoggedIn, async function (req, res) {
+  let uData = await user.findOne({
+    username: req.session.passport.user
+  }).populate('songAdded');
+  await res.render('songList', { songs: uData.songAdded });
+  // await res.send(uData)
+
+})
+// when user liked a song 
 router.get('/likeSong/:id', isLoggedIn, async function (req, res) {
   let uData = await users.findOne({
     username: req.session.passport.user
@@ -168,4 +179,31 @@ router.get('/likeSong/:id', isLoggedIn, async function (req, res) {
 
 })
 
+// to play the song 
+router.get('/playSong/:id', async function (req, res) {
+  let song = await songs.findOne({
+    _id: req.params.id
+  });
+  await res.render('player', { sdata: song })
+})
+
+
+
+// to search the song 
+router.get('/search', function (req, res) {
+  let r = new RegExp(`^${req.query.q}`, "i");
+  songs.find({
+    name: { $regex: r }
+  }).then(function (d) {
+    res.render('songList', { songs: d })
+  })
+})
+router.get('/searchOptions/:name', function (req, res) {
+  let r = new RegExp(`^${req.params.name}`, "i");
+  songs.find({
+    name: { $regex: r }
+  }).then(function (d) {
+    res.send(d);
+  })
+})
 module.exports = router;

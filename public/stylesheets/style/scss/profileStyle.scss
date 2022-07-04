@@ -1,23 +1,71 @@
 @import './util';
 
 #nrt {
-    width: 20%;
-    // background-color: yellow;
+    width: 30%;
+    // background-color: rgba(255, 255, 0, 0.24);
     display: flex;
     align-items: center;
     justify-content: space-between;
 
 
+    @include mobile(650px) {
+        width: 20%;
+    }
+
+    @include mobile(550px) {
+        width: 25%;
+        // flex-direction: column;
+        // align-items: flex-end;
+        height: 50%;
+        // margin-top: 1em;
+        // margin-left: 3em;
+        // width: 19%;
+    }
+
+
+
+
 
     #nicons {
-        width: 40%;
+        width: 10vw;
+
+        i {
+            @include mobile(650px) {
+                display: none;
+
+            }
+
+            &:nth-child(3) {
+                @include mobile(650px) {
+                    display: initial;
+
+                }
+            }
+        }
+
+        @include mobile(650px) {
+            width: 5vw;
+        }
+
+
     }
+
 
     h6 {
         color: colors('w');
         font-size: fontSize('s');
         font-weight: fontWeight('r');
         font-family: $secondaryFont;
+
+        @include mobile(650px) {
+            font-size: fontSize('xs');
+
+        }
+
+        @include mobile(550px) {
+            // order: 2;
+
+        }
     }
 
 }

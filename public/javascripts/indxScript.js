@@ -7,8 +7,20 @@ let signWin = document.getElementById("signWin");
 let logBtn = document.getElementById("logBtn");
 let signBtn = document.getElementById("signBtn");
 let sb1Cls = document.querySelector("#sb1Cls");
+
+let media1 = window.matchMedia("(max-width:500px)");
+let media2 = window.matchMedia("(max-width:900px)");
+
 sb1Btn.addEventListener("click", function () {
-    sb1Sec.style.width = "40%";
+    if (media1.matches) {
+        sb1Sec.style.width = "100%";
+    } else if (media2.matches) {
+        sb1Sec.style.width = "60%";
+
+    } else {
+        sb1Sec.style.width = "40%";
+
+    }
     sb1Content.style.display = "initial";
     sb1Cls.style.display = 'initial';
 })

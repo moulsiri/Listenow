@@ -18,6 +18,9 @@
 
 <body>
   <main data-scroll-container>
+    <div id="menuSec">
+
+    </div>
     <div id="sb1Sec">
       <i class="ri-close-circle-fill" id="sb1Cls"></i>
 
@@ -39,7 +42,7 @@
               <input type="password" placeholder="enter password" name="password">
             </div>
             <div class="fbtn">
-              <button type="submit">LONGIN</button>
+              <button type="submit">LOGIN</button>
             </div>
             <p id="signBtn">new user? create an account here for great experience</p>
 
@@ -85,6 +88,8 @@
     </div>
     <nav>
       <div id="nlft">
+        <i class="ri-menu-line" id="menu"></i>
+
         <div id="logo">
           <h3>Liste<span>now.</span></h3>
 
@@ -101,27 +106,30 @@
         <i class="ri-user-add-fill" id="sb1Btn"></i>
       </div>
     </nav>
+    <div id="srchOvly">
+
+    </div>
     <div id="search">
-      <form action="#">
+      <form action="/search">
         <input type="search" placeholder="search latest trending songs, album and playlist" name="q">
-        <!-- <i class="ri-search-line"></i> -->
-
-
+        <i class="ri-close-circle-fill" id="srchCls"></i>
       </form>
+      <div id="srchOptions">
+
+
+      </div>
     </div>
     <div id="hero">
       <div id="hlft">
-        <img src="/asset/images/elements.png" alt="">
+        <div id="lftImg">
+          <img src="/asset/images/elements.png" alt="">
 
-        <!-- <div id="3d">
-                    <model-viewer src="./asset/3d model/3d.gltf.glb" alt="VR Headset" autoplay animation-name="Hover"
-                        camera-controls ar ios-src="./asset/3d model/3d.gltf.glb"
-                        style="position: absolute; left:5%;bottom:5%; width:60%; height:50vh;"></model-viewer>
-                </div> -->
-        <h2>As soon as <br>
-          I listen music, <br>
-          I ignore everything <br>
-          around me.</h2>
+          <h2>As soon as <br>
+            I listen music, <br>
+            I ignore everything <br>
+            around me.</h2>
+        </div>
+
 
 
       </div>
@@ -140,7 +148,7 @@
               alt="">
           </div>
         </div>
-        <div class="sElm">
+        <div class="sElm" id="mainContainer">
           <div id="glow">
 
           </div>
@@ -164,15 +172,21 @@
 
 
     </div>
-    <div data-scroll-section id="trending">
 
-    </div>
+
+    <!-- <div data-scroll-section id="trending">
+
+    </div> -->
 
 
 
 
 
   </main>
+  <!-- axios -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"
+    integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <!-- <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script> -->
   <!-- jquery -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -197,6 +211,7 @@
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="/javascripts/indxScript.js"></script>
   <script src="/javascripts/lcmSetup.js"></script>
+  <script src="/javascripts/search.js"></script>
 </body>
 
 </html>

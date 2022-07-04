@@ -16,6 +16,8 @@
         <div id="songs">
             <nav>
                 <div id="nlft">
+                    <i class="ri-menu-line" id="menu"></i>
+
                     <div id="logo">
                         <h3>Liste<span>now.</span></h3>
 
@@ -32,18 +34,26 @@
                     <i class="ri-user-add-fill" id="sb1Btn"></i>
                 </div>
             </nav>
+            <div id="srchOvly">
+            </div>
             <div id="search">
-                <form action="#">
+                <form action="/search">
                     <input type="search" placeholder="search latest trending songs, album and playlist" name="q">
+                    <i class="ri-close-circle-fill" id="srchCls"></i>
+
                     <!-- <i class="ri-search-line"></i> -->
 
 
                 </form>
+                <div id="srchOptions">
+
+
+                </div>
             </div>
             <div id="sResult">
 
                 <div id="srchTxt">
-                    <h3>Your search result is here</h3>
+                    <h3>Here's the collection</h3>
                 </div>
                 <div id="sList">
                     <%songs.forEach(function(data){%>
@@ -98,6 +108,11 @@
 
 
     <!-- <script src="script/player.js"></script> -->
+    <!-- axios -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"
+        integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/javascripts/search.js"></script>
 
 </body>
 

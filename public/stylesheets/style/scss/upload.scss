@@ -24,7 +24,16 @@ main {
     background-color: #fff;
     display: flex;
     flex-direction: column;
+
     // justify-content: space-between;
+    @include mobile(600px) {
+        width: 90%;
+    }
+
+    @include mobile(450px) {
+        width: 95%;
+        // height: 90vh;
+    }
 
     h1 {
         font-family: $primaryFont;
@@ -33,6 +42,11 @@ main {
         margin-top: .5em;
         margin-left: 1em;
         margin-bottom: .5em;
+
+        @include mobile(450px) {
+            font-size: fontSize('s');
+        }
+
         // margin: 1em;
     }
 
@@ -44,6 +58,15 @@ main {
     width: 50%;
     // background-color: rgba(255, 255, 0, 0.603);
     margin-left: 2em;
+
+    @include mobile(1200px) {
+        width: 80%;
+    }
+
+    @include mobile(450px) {
+        width: 95%;
+
+    }
 
 }
 
@@ -64,6 +87,10 @@ main {
         font-weight: fontWeight('r');
         // margin-left: .5em;
         margin-bottom: 1em;
+
+        @include mobile(450px) {
+            font-size: fontSize('xs');
+        }
     }
 
     form {
@@ -106,6 +133,23 @@ main {
             letter-spacing: .1em;
 
         }
+
+        &[type=file] {
+            color: colors(v)
+        }
+
+        &[type=file]::file-selector-button {
+            border: none;
+            background-color: transparent;
+            border-bottom: 1px solid colors(r)
+        }
+
+        &[type=select] {
+            outline: none;
+
+
+        }
+
     }
 
     p {
@@ -130,12 +174,50 @@ main {
     align-items: center;
     width: 10%;
     justify-content: space-between;
-    padding: .5em 1em;
+    padding: 1em;
     background-color: colors('v');
     border-radius: 2em;
 
+    @include mobile(1200px) {
+        right: 10%;
+        width: 15%;
+
+    }
+
+    @include mobile(750px) {
+        right: 10%;
+        width: 20%;
+
+    }
+
+    @include mobile(550px) {
+        right: 10%;
+        width: 25%;
+
+    }
+
+    @include mobile(450px) {
+        width: fit-content;
+        right: 5%;
+        // bottom: 10%;
+
+    }
+
+
+
+
+
+
+
     a {
-        color: colors('w')
+        color: colors('w');
+
+        &:first-child {
+            @include mobile(450px) {
+                display: none;
+
+            }
+        }
     }
 
     i {

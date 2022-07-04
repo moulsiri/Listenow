@@ -23,25 +23,25 @@
                         <label for="songName">
                             Song name
                         </label>
-                        <input type="text" placeholder="enter the name of the song" name="songName">
+                        <input type="text" placeholder="enter the name of the song" name="songName" required>
                     </div>
                     <div class="felm">
-                        <label for="genre">
+                        <label for="album">
                             Album
                         </label>
-                        <input type="text" placeholder="enter the name of album" name="album">
+                        <input type="text" placeholder="enter the name of album" name="album" required>
                     </div>
                     <div class="felm">
                         <label for="artist">
                             Artist
                         </label>
-                        <input type="text" placeholder="enter the name of the artist" name="artist">
+                        <input type="text" placeholder="enter the name of the artist" name="artist" required>
                     </div>
                     <div class="felm">
                         <label for="language">
                             Language
                         </label>
-                        <select name="language" id="language">
+                        <select name="language" id="language" required>
                             <option value="Hindi">Hindi</option>
                             <option value="English">English</option>
                             <option value="Punjabi">Punjabi</option>
@@ -53,7 +53,7 @@
                         <label for="songPic">
                             Song Poster
                         </label>
-                        <input type="file" name="pic">
+                        <input type="file" name="pic" required>
                         <p>*accepted file format is (.png and .jpg)</p>
                     </div>
 
@@ -61,7 +61,7 @@
                         <label for="songPic">
                             Song
                         </label>
-                        <input type="file" name="song">
+                        <input type="file" name="song" required>
                         <p>*accepted file format is (.mp3)</p>
                     </div>
 
@@ -74,7 +74,7 @@
 
         </div>
         <div class="back">
-            <a href="/profile">Home</a><i class="ri-home-smile-line"></i>
+            <a href="/profile">Home </a><a href="/profile"><i class="ri-home-smile-line"></i></a>
         </div>
 
 

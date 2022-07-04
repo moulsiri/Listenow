@@ -34,10 +34,10 @@
                         <a href="#">Your Library</a><i class="ri-play-list-fill"></i>
                     </div>
                     <div class="uelm">
-                        <a href="#">Songs you Like</a><i class="ri-heart-fill"></i>
+                        <a href="/songsYouLike">Songs you Like</a><i class="ri-heart-fill"></i>
                     </div>
                     <div class="uelm">
-                        <a href="#">Songs uploaded by you</a><i class="ri-upload-cloud-fill"></i>
+                        <a href="/songsYouAdded">Songs uploaded by you</a><i class="ri-upload-cloud-fill"></i>
                     </div>
                     <a href="/uploadForm"><button>Upload Song <i class="ri-upload-cloud-fill"></i></button></a>
                     <a href="/logout"><button id="logout">Logout <i class="ri-logout-circle-r-line"></i></button></a>
@@ -50,6 +50,8 @@
         </div>
         <nav>
             <div id="nlft">
+                <i class="ri-menu-line" id="menu"></i>
+
                 <div id="logo">
                     <h3>Liste<span>now.</span></h3>
 
@@ -72,27 +74,32 @@
 
 
         </nav>
+        <div id="srchOvly">
+        </div>
         <div id="search">
-            <form action="#">
+            <form action="/search">
                 <input type="search" placeholder="search latest trending songs, album and playlist" name="q">
+                <i class="ri-close-circle-fill" id="srchCls"></i>
+
                 <!-- <i class="ri-search-line"></i> -->
 
 
             </form>
+            <div id="srchOptions">
+
+
+            </div>
         </div>
         <div id="hero">
             <div id="hlft">
-                <img src="/asset/images/elements.png" alt="">
+                <div id="lftImg">
+                    <img src="/asset/images/elements.png" alt="">
+                    <h2>As soon as <br>
+                        I listen music, <br>
+                        I ignore everything <br>
+                        around me.</h2>
+                </div>
 
-                <!-- <div id="3d">
-                    <model-viewer src="./asset/3d model/3d.gltf.glb" alt="VR Headset" autoplay animation-name="Hover"
-                        camera-controls ar ios-src="./asset/3d model/3d.gltf.glb"
-                        style="position: absolute; left:5%;bottom:5%; width:60%; height:50vh;"></model-viewer>
-                </div> -->
-                <h2>As soon as <br>
-                    I listen music, <br>
-                    I ignore everything <br>
-                    around me.</h2>
 
 
             </div>
@@ -109,7 +116,7 @@
                             alt="">
                     </div>
                 </div>
-                <div class="sElm">
+                <div class="sElm" id="mainContainer">
                     <div id="glow">
 
                     </div>
@@ -132,17 +139,22 @@
 
 
         </div>
-        <div data-scroll-section id="trending">
+        <!-- <div data-scroll-section id="trending">
 
-        </div>
+        </div> -->
 
 
 
 
 
     </main>
-
+    <!-- axios -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"
+        integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="/javascripts/profileScript.js"></script>
+    <script src="/javascripts/search.js"></script>
+
 </body>
 
 </html>
