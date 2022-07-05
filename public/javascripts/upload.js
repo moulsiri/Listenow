@@ -8,6 +8,6 @@ let socket = io();
 
 // })
 
-window.addEventListener("hashchange", function (e) {
-    console.log('loading.......');
-})
+// window.addEventListener("hashchange", function (e) {
+//     console.log('loading.......');
+// })
