@@ -162,7 +162,7 @@ nav {
 #search {
     margin: 0 auto;
     width: 50vw;
-    height: 5vh;
+    height: fit-content;
     position: absolute;
     z-index: 99;
     top: 8%;
@@ -181,7 +181,7 @@ nav {
 
     left: 50%;
     transform: translate(-50%, 0%);
-    transition: height cubic-bezier(0.075, 0.82, 0.165, 1) 3s;
+    // transition: height cubic-bezier(0.075, 0.82, 0.165, 1) 3s;
 
     form {
         display: flex;

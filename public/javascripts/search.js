@@ -7,7 +7,7 @@ srchInpt.addEventListener('click', function () {
     document.querySelector('#srchOvly').style.display = 'initial';
     srchBx.style.zIndex = 9999;
     srchBx.style.borderRadius = "1em";
-    srchBx.style.height = '50vh';
+    // srchBx.style.transform = 'scale(1.5)'
     srchClose.style.display = 'initial'
     srchBx.style.backgroundColor = "#fff";
     // alert('hello')
@@ -36,7 +36,7 @@ srchClose.addEventListener("click", function () {
     document.querySelector('#srchOvly').style.display = 'none';
     srchBx.style.zIndex = 9;
     srchBx.style.borderRadius = "0";
-    srchBx.style.height = '5vh';
+    // srchBx.style.height = '5vh';
     srchClose.style.display = 'none'
     srchBx.style.backgroundColor = "transparent";
 })

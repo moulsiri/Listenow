@@ -65,6 +65,7 @@ router.get('/profile', isLoggedIn, async function (req, res) {
 
 router.get('/uploadForm', isLoggedIn, function (req, res) {
   res.render('upload');
+
 })
 
 
@@ -86,7 +87,8 @@ router.post('/uploadSong', isLoggedIn, multerUploads.fields([{ name: 'pic', maxC
         console.log("image uploaded")
         cloudinary.v2.uploader.upload(songFile.toString(), {
           resource_type: 'video',
-          public_id: `SongUploads/${sfName}`
+          public_id: `SongUploads/${sfName}`,
+          timeout: 120000
         }).then(function (data) {
           songLoc = data.url;
           console.log('song uploaded');
@@ -110,25 +112,30 @@ router.post('/uploadSong', isLoggedIn, multerUploads.fields([{ name: 'pic', maxC
             }).catch(function (e) {
               console.log('song add krne m error')
               console.log(e);
+              res.render('error');
             })
 
           }).catch(function (e) {
             console.log('user find karne m error');
             console.log(e)
+            res.render('error');
           })
 
         }).catch(function (e) {
           console.log('song upload kerne m error');
           console.log(e);
+          res.render('error');
         })
       }).catch(function (e) {
         console.log('image upload kerne m error');
         console.log(e)
+        res.render('error');
       })
 
     } catch (err) {
       console.log(err);
-      res.json({ msg: 'something went wrong' });
+      // res.json({ msg: 'something went wrong' });
+      res.render('error');
 
 
     }
@@ -136,6 +143,9 @@ router.post('/uploadSong', isLoggedIn, multerUploads.fields([{ name: 'pic', maxC
   } else {
     res.json({ msg: 'no files' })
   }
+
+
+
 })
 //all songs collection 
 router.get('/songs', async function (req, res) {

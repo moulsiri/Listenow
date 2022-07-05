@@ -1,0 +1,130 @@
+@import './util';
+
+#menuSec {
+    height: 0vh;
+    width: 100vw;
+    background-color: colors(w);
+    position: absolute;
+    transition: height cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
+    z-index: 9999;
+
+    #menuCls {
+        position: absolute;
+        top: 10%;
+        right: 10%;
+        font-size: fontSize(l);
+        color: colors(b);
+        z-index: 9999999;
+        cursor: pointer;
+        display: none;
+    }
+
+    #mcontent {
+        width: 100%;
+        height: 100vh;
+        background-color: rgb(226, 137, 137);
+        overflow: hidden;
+        position: absolute;
+        display: none;
+
+        #mbg {
+            width: 100%;
+            height: 60vh;
+            background-color: rgb(255, 255, 255);
+            position: absolute;
+
+            img {
+                width: 100%;
+                height: 100%;
+                opacity: .4;
+
+                object-fit: cover;
+                object-position: center;
+            }
+
+
+
+        }
+
+        #mshade {
+            position: absolute;
+            bottom: -5%;
+            left: 50%;
+            transform: translate(-50%, 0%);
+            height: 80vmax;
+            width: 80vmax;
+            background-color: colors(w);
+            border-top-left-radius: 50%;
+            border-top-right-radius: 50%;
+            filter: blur(60px);
+
+        }
+
+        #mIndex {
+            width: 100%;
+            height: 60vh;
+            // background-color: yellow;
+            left: 50%;
+            top: 70%;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            #mLinks {
+                display: flex;
+                flex-direction: column;
+
+                align-items: center;
+
+                a {
+                    color: colors(r);
+                    font-family: $secondaryFont;
+                    margin-top: .5em;
+                    font-size: fontSize(m);
+                }
+
+
+            }
+
+            #mfooter {
+                width: 100vw;
+                height: 30vh;
+                // background-color: colors(w);
+                // background-color: rgba(0, 0, 0, 0.356);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+
+                p {
+                    font-style: italic;
+                    color: map-get($map: $colorAlpha, $key: vd)
+                }
+
+                .mlogo {
+                    // background-color: yellow;
+                    margin-top: 1em;
+
+                    h3 {
+                        color: colors('b');
+                        font-family: $primaryFont;
+                        // letter-spacing:rem;
+                        font-size: 1.5rem;
+                        font-weight: 500;
+
+                        span {
+                            color: colors('r');
+                            font-family: $primaryFont;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+
+
+}
