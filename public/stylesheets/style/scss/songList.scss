@@ -107,6 +107,10 @@ nav {
         width: 100%;
         overflow: auto;
         border: 1px solid map-get($colorAlpha, v);
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
     }
 
 

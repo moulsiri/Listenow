@@ -90,3 +90,44 @@ $secondaryFont: 'MongoDB Value Serif';
 .btn {
     padding: .3rem .5rem;
 }
+
+// primary font 
+@font-face {
+    font-family: "Daaron";
+    src: url('../fonts/Daaron-Bold.ttf');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Daaron";
+    src: url('../fonts/Daaron-regular.otf');
+    font-weight: 300;
+}
+
+// secondary font 
+
+@font-face {
+    font-family: "MongoDB Value Serif";
+    src: url('../fonts/MongoDBValueSerif-Regular.ttf');
+    font-weight: 300;
+}
+
+
+//genral font
+@font-face {
+    font-family: "gilroy";
+    src: url('../fonts/gilroy/Gilroy-Regular.otf');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "gilroy";
+    src: url('../fonts/gilroy/Gilroy-Medium.otf');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "gilroy";
+    src: url('../fonts/gilroy/Gilroy-Bold.otf');
+    font-weight: 900;
+}

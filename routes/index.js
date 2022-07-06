@@ -73,6 +73,7 @@ router.get('/uploadForm', isLoggedIn, function (req, res) {
 router.post('/uploadSong', isLoggedIn, multerUploads.fields([{ name: 'pic', maxCount: '1' }, { name: 'song', maxCount: '1' }]), async function (req, res) {
   let picLoc = "";
   let songLoc = "";
+  // console.log(req.files);
 
   if (req.files) {
     const picFile = dataUri(req.files.pic[0]).content;

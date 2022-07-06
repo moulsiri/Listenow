@@ -4,6 +4,7 @@ const path = require('path');
 const storage = multer.memoryStorage();
 const multerUploads = multer({ storage, fileFilter: fileFilter });
 function fileFilter(req, file, cb) {
+    // console.log(file)
     if (file.fieldname === 'pic') {
         if (file.mimetype === 'image/png' || file.mimetype === 'image/jpeg') {
             cb(null, true);
@@ -11,7 +12,8 @@ function fileFilter(req, file, cb) {
             cb(null, false);
         }
     } else if (file.fieldname === 'song') {
-        if (file.mimetype === 'audio/mpeg') {
+        // console.log(file.mimetype === 'audio/mpeg')
+        if (file.mimetype === 'audio/mpeg' || file.mimetype === 'audio/mp3') {
             cb(null, true);
         } else {
             cb(null, false);
