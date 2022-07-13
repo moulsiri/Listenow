@@ -1,5 +1,5 @@
 // const { text } = require("express");
-
+let pointer = 0;
 let tl = gsap.timeline();
 let sImg = [{
     img: "/asset/singers/Mask Group 20.png",
@@ -79,7 +79,10 @@ function s() {
 
                 });
             }
-        }, "-=.5")
+        }, "-=.5").from("#number,#sNext", {
+            opacity: 0,
+            y: 20
+        })
 }
 
 function textOff(n) {
@@ -291,14 +294,19 @@ function tran(n) {
             break;
 
     }
+    document.getElementById("number").querySelector("h2 span").textContent = `${(n % 3) + 1}`
 
 }
 function slidShow() {
-    let pointer = 0;
     s = setInterval(function () {
         tran(pointer % 3);
         pointer++;
 
     }, 7000)
 }
+document.getElementById('sNext').addEventListener("click", function () {
+    tran(pointer % 3);
+    pointer++
+
+})
 s();

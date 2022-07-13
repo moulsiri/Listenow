@@ -446,6 +446,20 @@ nav {
 
         }
 
+        #number {
+            position: absolute;
+            bottom: 10%;
+            right: 10%;
+            color: #fff;
+
+            // font-family: $primaryFont;
+            h2 {
+                font-weight: 100;
+                letter-spacing: .1em;
+                font-size: fontSize(xs);
+            }
+        }
+
     }
 }
 
@@ -605,6 +619,16 @@ nav {
                 z-index: 1;
             }
         }
+
+        #sNext {
+            position: absolute;
+            top: 50%;
+            right: -50%;
+            font-size: fontSize(m);
+            color: #fff;
+            transform: translate(0%, -50%);
+            cursor: pointer;
+        }
     }
 
     .sovly {
@@ -652,6 +676,10 @@ nav {
         width: 80%;
         z-index: 999;
 
+        @include mobile(550px) {
+            bottom: -50%;
+        }
+
         h2 {
             font-size: .9em;
             font-weight: fontWeight(r);
@@ -666,6 +694,7 @@ nav {
             margin-top: .5em;
 
         }
+
     }
 
 
