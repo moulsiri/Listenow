@@ -166,11 +166,11 @@ nav {
 #sb1Sec {
     height: 100vh;
     position: absolute;
-    background-color: map-get($colorAlpha, 'r');
+    background-color: colors(y);
     width: 0%;
     right: 0;
     z-index: 999999;
-    backdrop-filter: blur(5px);
+    // backdrop-filter: blur(5px);
     @include centerFlex;
     @include transition(width);
 
@@ -211,9 +211,9 @@ nav {
         height: 85%;
 
         p {
-            margin: 1em 0 0 2em;
+            margin: 1em 0 0 0em;
             font-size: fontSize(xs);
-            color: colors(r);
+            color: colors(b);
             font-style: italic;
             cursor: pointer;
         }
@@ -246,7 +246,7 @@ nav {
     width: 100%;
     height: fit-content;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     // background-color: yellowgreen;
     padding: 0 2em;
     margin-top: 2em;
@@ -254,7 +254,9 @@ nav {
     button {
         padding: .5em 1em;
         letter-spacing: .1em;
-        background-color: colors('y');
+        background-color: colors('r');
+        border-radius: 2em;
+        width: 95%;
         color: #fff;
         border: none;
         cursor: pointer;
@@ -317,7 +319,7 @@ nav {
 
     left: 50%;
     transform: translate(-50%, 0%);
-    // transition:  cubic-bezier(0.075, 0.82, 0.165, 1) 3s;
+    transition:height cubic-bezier(0.075, 0.82, 0.165, 1) 3s;
 
     form {
         display: flex;
@@ -422,7 +424,8 @@ nav {
 
         @include mobile(550px) {
             flex-basis: 100vw;
-            order: 2;
+            // order: 2;
+            // height: 60vh;
             display: initial;
         }
 
@@ -439,7 +442,7 @@ nav {
 
         @include mobile(900px) {
             flex-basis: 100vw;
-            order: 1;
+            // order: 1;
 
         }
 
@@ -449,12 +452,12 @@ nav {
 
 #lftImg {
     // background-color: rgba(255, 255, 0, 0.349);
-    width: 30vw;
-    height: 50vh;
+    width: 25vw;
+    height: 30vh;
     position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    left: 25%;
+    top: 20%;
+    // transform: translate(-50%, -50%);
     font-size: 15px;
 
     @include mobile(1200px) {
@@ -463,15 +466,12 @@ nav {
     }
 
     @include mobile(900px) {
-        width: 80vw;
-        height: 30vh;
+        width: 60vw;
+        height: 20vh;
         font-size: 10px;
-        top: 40%;
-
-
+        top: 0%;
+        left: 15%;
     }
-
-
 
     img {
         height: 13em;
@@ -484,12 +484,30 @@ nav {
 
     h2 {
         color: colors('w');
-        font-family: $secondaryFont;
+        // font-family: $secondaryFont;
         font-weight: fontWeight('r');
         position: absolute;
-        right: 0%;
+        left: 0%;
         top: 0%;
-        font-size: 2.2em;
+        font-size: 3.5em;
+        letter-spacing: -0.01em;
+        line-height: 1em;
+        font-family: proxima-nova, sans-serif;
+        font-style: italic;
+        font-weight: 700;
+        text-transform: uppercase;
+        // font-family: 'Bebas Neue', cursive;
+
+        // width: 80%;
+        @include mobile(550px) {
+            line-height: 1.2em;
+        }
+
+        span {
+            font-family: proxima-nova, sans-serif;
+            font-style: italic;
+            font-weight: 700;
+        }
 
         // font-size: 10rem;
 
@@ -499,86 +517,23 @@ nav {
 
 }
 
-
-
-.sElm {
+#hcarousel {
     width: 60%;
     height: 50vh;
-    // background-color: rgb(214, 181, 181);
     position: absolute;
     left: 0%;
     top: 50%;
     transform: translate(0%, -50%);
+    // background-color: rgba(255, 0, 0, 0.164);
 
     @include mobile(550px) {
         height: 25vh;
+        top: 30%;
     }
 
     @include mobile(900px) {
         left: 10%;
-        // top: 50%;
     }
-
-    &:nth-child(2) {
-        left: 15%;
-
-        // background-color: yellow;
-        @include mobile(900px) {
-            left: 25%;
-        }
-
-        .scontent {
-            width: 80%;
-            height: 80%;
-            left: 60%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            position: absolute;
-
-
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-
-            }
-        }
-    }
-
-    &:nth-child(1) {
-        left: 25%;
-
-        @include mobile(900px) {
-            left: 35%;
-        }
-
-        // background-color: blue;
-
-        .scontent {
-            width: 60%;
-            height: 60%;
-            left: 70%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            position: absolute;
-
-
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-
-            }
-        }
-    }
-
-
-
-
-
-}
-
-#mainContainer {
 
     #glow {
         width: 10em;
@@ -590,11 +545,14 @@ nav {
         left: 50%;
         transform: translate(-50%, -50%);
         box-shadow: 0 0 121px 55px rgba(255, 255, 255, 0.226);
+        z-index: 1;
         filter: blur(80px);
 
         @include mobile(550px) {
             filter: blur(10px);
             box-shadow: 0 0 121px 25px rgba(255, 255, 255, 0.226);
+            width: 6em;
+            height: 6em;
         }
 
         // @include mobile(900px) {
@@ -604,42 +562,115 @@ nav {
 
     }
 
-    .scontent {
-
+    #hslider {
         width: 100%;
         height: 100%;
+        // background-color: yellow;
         position: absolute;
+        z-index: 2;
+
+
+        .sElm {
+            position: absolute;
+            top: 50%;
+            transform: translate(0%, -50%);
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+
+            &:nth-child(1) {
+                left: 0%;
+                width: 100%;
+                height: 100%;
+                z-index: 3;
+                // transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 2s;
+
+            }
+
+            &:nth-child(2) {
+                left: 40%;
+                width: 80%;
+                height: 80%;
+                z-index: 2;
+            }
+
+            &:nth-child(3) {
+                left: 80%;
+                width: 60%;
+                height: 60%;
+                z-index: 1;
+            }
+        }
+    }
+
+    .sovly {
+        position: absolute;
+        width: 90%;
+        height: 90%;
+        backdrop-filter: blur(3px);
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 3;
+
+    }
+
+
+    #singer {
+        width: 100%;
+        height: 110%;
+        // background-color: #fff;
+        position: absolute;
+        bottom: 0;
+        // left: 0;
+        z-index: 4;
 
         img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            // display: none;
-
         }
 
-        .sovly {
-            position: absolute;
-            width: 90%;
-            height: 90%;
-            backdrop-filter: blur(3px);
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
 
+    }
+
+    #htxt {
+        position: absolute;
+        color: #fff;
+        bottom: -20%;
+        transform: translate(-50%, 0%);
+        // background-color: red;
+        left: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 80%;
+        z-index: 999;
+
+        h2 {
+            font-size: .9em;
+            font-weight: fontWeight(r);
+            text-align: center;
         }
 
-        #singer01 {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            right: -25%;
-            top: 0%;
-            object-fit: contain;
+        a {
+            color: colors(y);
+            text-decoration: dotted colors(y);
 
-            @include mobile(550px) {}
+            font-size: .7em;
+            margin-top: .5em;
+
         }
     }
+
+
+
+
 
 }
 
@@ -649,10 +680,12 @@ nav {
     position: absolute;
     top: 95%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(0%, -50%);
     flex-flow: column;
     display: flex;
     align-items: center;
+    // opacity: 0;
+    // animation: fadeInOut 2s cubic-bezier(0.165, 0.84, 0.44, 1) infinite both;
 
     h6 {
         color: colors('y');
@@ -681,4 +714,50 @@ nav {
     background-color: #fff;
     // position: relative;
     // z-index: 99999;
+}
+
+
+@keyframes fadeInOut {
+    0% {
+        opacity: .2;
+    }
+
+    25% {
+        opacity: .4;
+    }
+
+    50% {
+        opacity: .6;
+    }
+
+    75% {
+        opacity: .8;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+//for animation
+.aOvrly {
+    width: 100vw;
+    height: 100vh;
+    background-color: colors(r);
+    position: absolute;
+    top: 200%;
+    z-index: 99999;
+    transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 3s;
+
+    &:nth-child(1) {
+        background-color: colors(w);
+        top: 0;
+
+        transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
+
+    }
+
+
+
+
 }

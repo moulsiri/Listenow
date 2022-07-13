@@ -18,7 +18,7 @@ sb1Btn.addEventListener("click", function () {
         sb1Sec.style.width = "60%";
 
     } else {
-        sb1Sec.style.width = "40%";
+        sb1Sec.style.width = "30%";
 
     }
     sb1Content.style.display = "initial";

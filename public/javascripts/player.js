@@ -49,3 +49,8 @@ function getSec(min) {
     let sec = min % 1;
     return Math.floor(sec * 60);
 }
+// window.addEventListener("load", function () {
+//     song.play();
+//     alert("hello")
+
+// })
