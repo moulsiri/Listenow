@@ -4,4 +4,4 @@ A simple app in which user can create their profiles and upload the songs from t
 here's the link of my app which I have deployed on heroku
 https://listenow-moulsiri.herokuapp.com/
 
-check out the above link of my app and provide the fruitful feedback for this
+check out the above link of my app and provide the fruitful feedback
