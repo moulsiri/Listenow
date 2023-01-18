@@ -3,14 +3,7 @@ const mb = require('mongoose');
 const plm = require("passport-local-mongoose");
 
 
-mb.connect(connectionString, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-}).then(function () {
-  console.log('database connected');
-}).catch(function (err) {
-  console.log(err)
-})
+
 
 
 const Schema = mb.Schema({

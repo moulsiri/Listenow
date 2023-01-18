@@ -7,7 +7,7 @@ const songs = require('./songs');
 
 // Uploading in cloudinary .
 const { multerUploads, dataUri } = require('../Upload/multer');
-const cloudinary = require('../Upload/cloudinaryConfig');
+const cloudinary = require('cloudinary');
 const users = require('./users');
 
 // passport authentication 

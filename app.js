@@ -1,17 +1,37 @@
+let dotenv=require('dotenv');
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const cloudinary = require('cloudinary');
+
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
+const connection=require('./additional/connection')
 const passport = require("passport");
 const expressSession = require('express-session');
 let socketFile = require('./additional/socketlog');
 
 var app = express();
+
+//environment variable
+if(process.env.NODE_ENV!=='PRODUCTION'){
+  dotenv.config({path:'config/.env'});
+}
+
+//cloudinary config
+try {
+  cloudinary.config({
+      cloud_name: process.env.CLOUD_NAME,
+      api_key: process.env.CLOUD_API_KEY,
+      api_secret: process.env.CLOUD_SECRET
+  });
+} catch (err) {
+  console.log("errror!")
+}
 
 //passport js setup
 app.use(expressSession({
@@ -56,5 +76,7 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+connection(process.env.MONGO_URI)
 
 module.exports = app;

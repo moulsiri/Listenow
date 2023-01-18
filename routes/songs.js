@@ -1,13 +1,4 @@
 const mb = require('mongoose');
-const connectionString = 'mongodb+srv://mouli:1234@cluster0.zwm7d.mongodb.net/Listenow?retryWrites=true&w=majority';
-mb.connect(connectionString, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-}).then(function () {
-    console.log('song database connected');
-}).catch(function (err) {
-    console.log(err)
-})
 
 const schema = mb.Schema({
     name: String,
