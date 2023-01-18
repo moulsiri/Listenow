@@ -1,4 +1,3 @@
-const connectionString = 'mongodb+srv://[username]:[password]@cluster0.zwm7d.mongodb.net/Listenow?retryWrites=true&w=majority';
 const mb = require('mongoose');
 const plm = require("passport-local-mongoose");
 
